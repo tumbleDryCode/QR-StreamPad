@@ -1,6 +1,8 @@
 <table style="margin: 0 auto; max-width: 900px" align="center">
 	<tr>
-		<td><p><strong>- About:</strong><br>QRStreamPad is an abstract attempt 
+		<td><p><strong>- About:<br><br></strong>
+		<img height="800" src="assets/images/demo.png" style="height: 333px; width: 200px" width="480">^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<img height="480" src="assets/images/demo2.png" style="height: 240px; width: 400px" width="800"><br>QRStreamPad is an abstract attempt 
 		to use delimited data in QR Code Images in numerous ways. <br>This 
 example uses a QRCode reader to&nbsp; render data using html, javascript and 
 an sqlite database.<br>No sucurity exploits checking, refactoring, form-connection validation, 
