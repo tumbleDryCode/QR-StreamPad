@@ -1,0 +1,75 @@
+<html><head>
+ <script language="javascript" type="text/javascript" src="js/app_all.js"></script>
+        <link rel="stylesheet" href="app_all.css">
+ <script language="javascript" type="text/javascript" src="js/app_aqr.js"></script>
+ <style type="text/css">
+ #qrinput {
+	 height: 57px;
+	 width: 966px;
+ }
+ </style>
+</head>
+<body onload="setupqr()">
+ 
+<table style="width: 100%">
+	<tr>
+		<td style="height: 118px">This page includes the QR code generator 
+		below.<br>Basically Your setting a delimited string as the QR Code 
+		string.<br>This string is then read by the app and the data is tokenized 
+		for the database or viewing.<br>In this demo the | is used to split each 
+		record and the semi-colon is used to split the fields.<br>The android 
+		apps sqlite database is pretty simple with 1 table that has 7 basic 
+		fields:<br>rec_id, rec_type, rec_val_a, rec_val_b, rec_val_c, date_added 
+		and date_modified. see UtilSQLiteAdapter and UtilDBRecord.<br>The rec_id is androids _id column and the rest 
+		are used in the delimted strings below.<br>The rec_type determines if 
+		its a leaflet, recipe, etc.<br>&nbsp;rectypes<br>5 - leaflet ; id ; 
+		title; ..<br>10 - recipe ; id ; title ;..<br>50 - product ; promo id ; 
+		title ; pricing ; favorite..<br>When using this for testing, dont forget 
+		to change the id paramater 5;300 ... 5;301 ..&nbsp; 5;302 .. etc., <br>
+		or it will read records with that id already inserted in db.<br><br></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><form name="qrinp">
+						<table>
+				<tr>
+					<td style="height: 32px"><input type="hidden" id="ECC" name="ECC" value="1">
+					<textarea name="qrinput" id="qrinput">5;300;Fruits and Vegetables;Oranges, pares, green beans, everything with huge discounts;Dadded|
+50;1;Juicy Oranges MyShop 2KG;1.69-1.15-1;0|
+50;2;Apples FUJI MyShop 1KG;1.29-0.99-1;0|
+50;3;Beans MyShop 125gr;3.49-2.59-1;0|
+50;4;Grapes RED GLOBE MyShop 1KG;2.99-2.09-1;0|
+50;5;PERA PACKAMS MyShop 1KG;2.29-1.59-1;0|
+50;6;ANONA MyShop 1KG;2.99-2.16-1;0|
+50;7;Beans VERDE MyShop 1KG;2.79-1.79-1;0|
+50;8;BATATA VERMELHA/BRANCA MyShop 3KG;1.77-0.59-1;0|
+50;9;BERINGELA MyShop 1KG;1.89-0.99-1;0</textarea><br><br>
+					<a href="javascript:doqr();">Click to generate QR Code Image Here:</a></td>
+				</tr>
+				</table>
+					</form>	</td>
+	</tr>
+	<tr>
+		<td><canvas id="qrcanv">
+			&nbsp;No Canvas Support?</canvas></td>
+	</tr>
+	<tr>
+		<td>Other Notes:</td>
+	</tr>
+	<tr>
+		<td>You can use search and replace to replace repetitive long string 
+		with shorter ones in your delimited string.<br>You can also use 
+		compression scripts.<br>In the images folder is a masked QR Code image 
+		to give you an ideia of how masking is done to spice up your QR code 
+		images.</td>
+	</tr>
+</table>
+ 
+
+ 
+ 
+
+</body>
+</html>

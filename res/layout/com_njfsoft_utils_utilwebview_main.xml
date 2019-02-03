@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+>
+    <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+             >
+        <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="56dip"
+                android:background="#000000"
+                android:id="@+id/rLayoutWVbtns"
+
+                >
+
+
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    >
+
+
+
+
+                <ImageButton
+                        android:id="@+id/btn_Home"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:src="@drawable/utilwebview_icon"
+                        android:background="#000000"
+                        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:padding="5dp"
+        android:scaleType="fitCenter" 
+                        />
+
+
+                <ImageButton
+                        android:id="@+id/btn_go_back"
+                        android:src="@drawable/utilwebview_menu_back"
+                        android:background="#000000"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:layout_gravity="center"
+                        />
+                <ImageButton
+                        android:id="@+id/btn_go_foward"
+                        android:src="@drawable/utilwebview_menu_forward"
+                        android:background="#000000"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:layout_gravity="center"
+                        />
+                <ImageButton
+                        android:id="@+id/btn_refresh"
+                        android:src="@drawable/utilwebview_menu_refresh"
+                        android:background="#000000"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:layout_gravity="center"
+
+                        />
+                <ImageButton
+                        android:id="@+id/btn_stop"
+                        android:src="@drawable/utilwebview_menu_stop"
+                        android:background="#000000"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:layout_gravity="center"
+                        />
+                <ImageButton
+                        android:id="@+id/btn_settings"
+                        android:src="@drawable/utilwebview_menu_manage"
+                        android:background="#000000"
+                        android:layout_width="46dip"
+                        android:layout_height="50dip"
+                        android:layout_gravity="center"
+                        />
+
+            </LinearLayout>
+
+            <SlidingDrawer
+                    android:layout_width="fill_parent"
+                    android:id="@+id/slidingDrawer"
+                    android:handle="@+id/slideButton"
+                    android:padding="5dip"
+                    android:content="@+id/contentLayout"
+                    android:layout_height="53dip"
+                    android:orientation="horizontal"
+
+                    >
+                <ImageButton android:layout_width="36dip"
+                             android:layout_height="wrap_content"
+                             android:id="@+id/slideButton"
+                             android:src="@drawable/utilwebview_jog_tab"
+                             android:background="#000000"
+                             android:layout_gravity="center"
+                        > </ImageButton>
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:id="@+id/contentLayout"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="2dip"
+                        android:layout_height="wrap_content"
+                        android:background="#000"
+                        >
+
+
+                    <MultiAutoCompleteTextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/aCompTextView"
+                            android:width="220dip"
+                            android:height="50dip"
+                            android:imeActionLabel="Go"
+                            android:layout_gravity="center"
+                            android:textSize="6.2pt"
+
+                            />
+                    <Button android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_gotourl"
+                            android:textSize="5pt"
+                            android:text="GO"
+                            android:layout_gravity="center"
+                            > </Button>
+                    >
+
+                </LinearLayout>
+            </SlidingDrawer>
+
+        </RelativeLayout>
+
+      <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+                android:id="@+id/uwv_main"
+ 		>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

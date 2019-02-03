@@ -1,0 +1,55 @@
+﻿.dtable {
+  
+    	color:#DD1920;
+	background-color:#FFF8F8;
+	  border: 1px solid #000000; 
+	margin: 0 auto; padding: 2px; margin: 2px;
+
+}
+
+tfoot th {
+ 	padding: 0.2em;
+	text-align: left;
+	border: 1px solid black;
+	background-color: #FF0000;
+}
+
+thead th {
+ 	padding: 0.2em;
+	text-align: left;
+	border: 1px solid black;
+	background-color: #FF0000;
+	color:#FFFFFF;
+		font-weight:bold;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 15px;
+}
+thead a {
+ 
+	color:#FFFFFF;
+	border:0px;
+}
+
+
+tfoot td {
+	border-top: 1px solid black;
+}
+
+tbody td {
+
+	padding: 0.2em;
+}
+
+tbody tr.odd {
+	background-color: #e5e5e5;
+}
+
+th.numeric {
+	text-align: right;
+}
+
+td.numeric {
+	text-align: right;
+}

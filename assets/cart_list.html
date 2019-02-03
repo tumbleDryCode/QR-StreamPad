@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Hyper Beacons</title>
+<meta name="HandheldFriendly" content="true"> 
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-NON-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/standardista-common.js"></script>
+<script language="javascript" type="text/javascript" src="js/standardista-table-sorting.js"></script>	
+<script language="javascript" type="text/javascript" src="js/app_all.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_shop.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_shared.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_dev.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_ui.js"></script>
+<link rel="stylesheet" href="js/app_all.css">
+<link rel="stylesheet" href="js/x_dev.css">
+<script language="javascript" type="text/javascript" src="js/standardista-css.js"></script>
+<link rel="stylesheet" href="js/standardista-style.css">
+<script>
+function hlightIcon() {
+theElem = document.getElementById("tdMUd");
+theElem.className = "rtable bkgdClrRed";
+}
+function getMHeader() {
+return "tplates/index_header.html";
+}
+function getMNav() {
+return "tplates/index_nav.html";
+}
+function getMContent() {
+return "tplates/index_content.html";
+}
+
+var setSentConf = function() {
+fullstr = "Confirmed. Order sent.";
+setTinnerHTML("tdMidContent",fullstr);
+showHideElement("tblobtns", "hide");
+}
+var doOrderSend = function(sendType) {
+strOT = "e";
+strOL = "0";
+if(sendType.indexOf("recolha") != -1) {
+strOT = "r";
+}
+strTnum = document.getElementById("tnum").value;
+strOL = getCurrListVal(document.getElementById("selloja"));
+document.getElementById("inpotype").value = strOT;
+
+strFstr = strOT + "-" + strOL + "-" + document.getElementById('ccstr').value;
+if(strTnum.length < 4) {
+alert("Intorduza phone number to be able to simulate backend.");
+} else if(strOL == "0") {
+alert("Select Shop Location.");
+} else {
+app.getFormatSMS('canvas',document.getElementById('ccstr').value,strTnum,'msg')
+}
+}
+</script>
+</head>
+<body>
+<div id="includedHeader">       
+</div>
+<div id="includedNav">
+</div>
+<div id="includedContent">       
+</div>
+
+<table style="margin: 0 auto" align="center" class="dtable">
+<tr>
+<td id="tdMidContent" style="color: white"><br><br><br><br><br><br><br><br><br><br><br><br></td>
+</tr>
+</table>
+<table id="tblobtns" style="margin: 0 auto; visibility:visible; display:block" align="center" class="dtable">
+<tr>
+<td class="txtBig txtBold" align="center" >Order by SMS for pickup or delivery:</td>
+</tr>
+<tr>
+<td style="color: white">
+<table style="margin: 0 auto">
+	<tr>
+		<td class="txtBold">Shop:</td>
+		<td><select name="selloja" id="selloja" class="brdrClrRed txtBold">
+								<option value="0">Shop Location</option>
+								<option value="1">Almada</option>
+								<option value="2">Lisboa</option>
+								<option value="3">Setubal</option>
+								<option value="4">Santarem</option>
+								<option value="5">Vila Franca</option>
+								<option value="6">Porto</option>
+								<option value="7">Vila Real</option>
+
+								</select></td>
+	</tr>
+</table>
+	</td>
+</tr>
+<tr>
+<td style="text-align: center;" class="txtBold">
+Order Type:</td>
+</tr>
+<tr>
+<td id="tdClickContent" style="color: white">
+<table style="width: 100%">
+	<tr>
+				<td><div class="bigtable bkgdClrRed txtClrWhite brdrClrDlg txtBold txtBig"  onclick="JSSHOP.ui.setCBBClickClr(this,'bigtable bkgdClrWhite txtClrRed brdrClrDlg txtBold txtBig','bigtable bkgdClrRed txtClrWhite brdrClrDlg txtBold txtBig', function(){app.doPagePopUp('recolha.html','noQvalue');});" style="text-align:center">
+					<table style="width: 100%">
+						<tr>
+							<td class="bkgdClrWhite">
+				<img class="icnsmlbtn" src="images/recolhaMed.png"></td>
+							<td class="txtClrWhite txtBold txtBig">Pick Up</td>
+						</tr>
+					</table>
+				</div></td>
+				<td class="txtClrWhite txtBold txtBig">--</td>
+				<td><div class="bigtable bkgdClrRed txtClrWhite brdrClrDlg txtBold txtBig"  onclick="JSSHOP.ui.setCBBClickClr(this,'bigtable bkgdClrWhite txtClrRed brdrClrDlg txtBold txtBig','bigtable bkgdClrRed txtClrWhite brdrClrDlg txtBold txtBig', function(){app.doPagePopUp('entrega.html','noQvalue');});" style="text-align:center">
+					<table style="width: 100%">
+						<tr>
+							<td class="bkgdClrWhite">
+				<img src="images/entrega.png" class="icnsmlbtn"></td>
+							<td class="txtClrWhite txtBold txtBig">Delivery</td>
+						</tr>
+					</table>
+				</div></td>
+				</tr>
+	</table>
+	</td>
+</tr>
+	<tr>
+<td style="color: white; height: 98px;">
+<table style="width: 100%" class="bkgdClrDlg">
+	<tr class="txtClrHdr">
+		<td><b>Para developer</b>: introduza o numero deste telefone ou outro com app 
+		instalado para simular backend continente.<br>Nota: se utiliza o numero 
+		deste telefone, o telefone está a servir de 
+		cliente e também de backend.<br>Pode sempre ver encomendas recebidas, 
+		(sms enviados para back-end),
+		<a href="javascript:app.getALocalUrl('developer.html');" class="txtBold txtClrRed"><font class="txtBold txtClrRed">aqui (D)</font></a>.<br>
+		<br>Developer should introduce phone number of the backend phone here.<br>
+		You can use the same phone for client and backend.<br>You can see orders 
+		placed, 
+		(sms sent to back-end),
+		<a href="javascript:app.getALocalUrl('developer.html');" class="txtBold txtClrRed"><font class="txtBold txtClrRed">here  (D)</font></a>.</td>
+	</tr>
+	<tr>
+		<td>
+		<table style="width: 100%">
+			<tr>
+				<td class="txtClrHdr">Tel #:</td>
+				<td>
+				 
+					<input name="tnum" id="tnum" type="text" style="width: 182px" class="brdrClrHdr txtClrHdr" value="1234567">
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+	</td>
+	</tr>
+<tr>
+<td style="color: white">
+&nbsp;</td>
+</tr>
+</table>
+
+<div id="includedFooter">       
+</div>
+<input type="hidden" name="fldChallArray" id="fldChallArray" value="noQvalue">
+<input type="hidden" name="inpotype" id="inpotype" value="e">
+<img src="images/trans.gif" height="5px" onload="doCartList('300')" onerror="doCartList('300')">
+</body>
+</html>

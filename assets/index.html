@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Hyper Beacons</title>
+<meta name="HandheldFriendly" content="true"> 
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-NON-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<script language="javascript" type="text/javascript" src="js/app_all.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/standardista-common.js"></script>
+<script language="javascript" type="text/javascript" src="js/standardista-table-sorting.js"></script>	
+<script language="javascript" type="text/javascript" src="js/x_shop.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_shared.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_dev.js"></script>
+<script language="javascript" type="text/javascript" src="js/x_ui.js"></script>
+<link rel="stylesheet" href="js/app_all.css">
+<link rel="stylesheet" href="js/x_dev.css">
+<script language="javascript" type="text/javascript" src="js/standardista-css.js"></script>
+<link rel="stylesheet" href="js/standardista-style.css">
+<script>
+function hlightIcon() {
+theElem = document.getElementById("tdMUa");
+theElem.className = "rtable bkgdClrRed";
+}
+function getMHeader() {
+return "tplates/index_header.html";
+}
+function getMNav() {
+return "tplates/index_nav.html";
+}
+
+function getMContent() {
+return "tplates/index_content.html";
+}
+
+var doIdxPload = function() {
+fullstr = "Folhetos    ..mais";
+// fullstr += getPromoList('5','3','6');
+// fullstr += "Receitas    ..mais";
+// fullstr += getPromoList('500','3','6');
+// fullstr += "Favoritos    ..mais";
+// fullstr += getFavsList('3');
+// fullstr += "Carrinha    ..mais";
+// fullstr += getCartList('5');
+fullstr += getRProdsList('5');
+setTinnerHTML("tdMidContent", fullstr);
+
+};
+
+</script>
+</head>
+<body onload="">
+<div id="includedHeader">       
+</div>
+<div id="includedNav">
+</div>
+<div id="includedContent">
+</div>
+
+<table style="margin: 0 auto" align="center" class="bigtable brdrBlack bkgdClrTtl">
+<tr>
+<td id="tdMidContent" class="txtClrRed txtBold"> 
+ &nbsp;QR StreamPad</td>
+</tr>
+</table><br><br>
+
+<table style="margin: 0 auto; padding:3px; " align="center" class="bigtable brdrBlack bkgdClrTtl">
+<tr>
+<td id="tdIntroContent" class="txtClrRed txtBold">Its easy using 
+QR StreamPad<br>Just point your camera to a QR StreamPad beacon and click: <div id="idbeacon" onclick="JSSHOP.ui.setCBBClickClr(this,'brdrClrRed','brdrClrWhite', function(){setQRscan()});" class="brdrClrWhite" style="text-align: center"> 
+ <img src="images/icon_nnew.png" class="icnmedbtn" align="absmiddle" alt="" width="38px"></div>
+	</td>
+</tr>
+<tr>
+<td id="tdIntroContent" class="txtClrRed txtBold"><span style="color: #A9C7D8">did you  
+<a href="javascript:app.rinsert();" style="color: #A9C7D8">Populate Database</a> ?</span></td>
+</tr>
+</table>
+ 
+
+
+<div id="includedFooter">
+</div>
+<input type="hidden" name="fldChallArray" id="fldChallArray" value="noQvalue">
+</body>
+</html>

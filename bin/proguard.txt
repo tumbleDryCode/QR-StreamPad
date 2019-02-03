@@ -1,0 +1,10 @@
+# view AndroidManifest.xml #generated:47
+-keep class com.jwetherell.quick_response_code.CaptureActivity { <init>(...); }
+
+# view res/layout/capture.xml #generated:26
+# view res/layout/decoder.xml #generated:26
+-keep class com.jwetherell.quick_response_code.ViewfinderView { <init>(...); }
+
+# view AndroidManifest.xml #generated:26
+-keep class com.streampad.StreamPad { <init>(...); }
+
